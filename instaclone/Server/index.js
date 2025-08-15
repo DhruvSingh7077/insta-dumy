@@ -14,12 +14,12 @@ app.use("/api/auth", authRoutes);
 const feedRoutes = require("./routes/feed"); 
 app.use("/api/posts", feedRoutes); 
 
-app.get('/',(req,res)=>{
-     res.send({
-      activeStatus:true,
-      error:false,
-     })
-})
+// app.get('/',(req,res)=>{
+//      res.send({
+//       activeStatus:true,
+//       error:false,
+//      })
+// })
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI)
