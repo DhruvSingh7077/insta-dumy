@@ -1,0 +1,14 @@
+{
+  "name": "instaclone",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run start --prefix Client\" \"npm run dev --prefix Server\""
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.7",
+    "concurrently": "^9.2.0",
+    "react-bootstrap": "^2.10.10",
+    "react-router-dom": "^7.7.1"
+  }
+}
