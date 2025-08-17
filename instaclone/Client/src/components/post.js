@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+const API_URL = process.env.REACT_APP_API_URL;
 
 const Post = ({ post }) => {
   const { token, user } = useContext(AuthContext);
@@ -12,7 +13,8 @@ const Post = ({ post }) => {
 
   const handleLike = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/posts/${post._id}/like`, {
+     // const res = await fetch(`http://localhost:5000/api/posts/${post._id}/like`, {
+     const res = await fetch(`${API_URL}/api/posts/${post._id}/like`, {
         method: 'PUT',
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -26,7 +28,8 @@ const Post = ({ post }) => {
 
   const handleBookmark = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/users/bookmark/${post._id}`, {
+     // const res = await fetch(`http://localhost:5000/api/users/bookmark/${post._id}`, {
+      const res = await fetch(`${API_URL}/api/users/bookmark/${post._id}`, {
         method: 'PUT',
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -42,7 +45,8 @@ const Post = ({ post }) => {
     if (!commentText.trim()) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/posts/${post._id}/comment`, {
+     // const res = await fetch(`http://localhost:5000/api/posts/${post._id}/comment`, {
+      const res = await fetch(`${API_URL}/api/posts/${post._id}/comment`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
