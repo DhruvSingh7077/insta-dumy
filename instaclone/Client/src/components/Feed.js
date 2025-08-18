@@ -14,7 +14,8 @@ const Feed = () => {
     useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/posts/all", {
+     // const res = await fetch("http://localhost:5000/api/posts/all", {
+       const res = await fetch(`${process.env.REACT_APP_API_URL}/api/posts/all`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}` // include only if required
